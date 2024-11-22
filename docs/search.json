@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "PM566 Final Project",
+    "section": "",
+    "text": "This is my Final Project (Pratice testing).\nlibrary(data.table)\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::between()     masks data.table::between()\n✖ dplyr::filter()      masks stats::filter()\n✖ dplyr::first()       masks data.table::first()\n✖ lubridate::hour()    masks data.table::hour()\n✖ lubridate::isoweek() masks data.table::isoweek()\n✖ dplyr::lag()         masks stats::lag()\n✖ dplyr::last()        masks data.table::last()\n✖ lubridate::mday()    masks data.table::mday()\n✖ lubridate::minute()  masks data.table::minute()\n✖ lubridate::month()   masks data.table::month()\n✖ lubridate::quarter() masks data.table::quarter()\n✖ lubridate::second()  masks data.table::second()\n✖ purrr::transpose()   masks data.table::transpose()\n✖ lubridate::wday()    masks data.table::wday()\n✖ lubridate::week()    masks data.table::week()\n✖ lubridate::yday()    masks data.table::yday()\n✖ lubridate::year()    masks data.table::year()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(dplyr)\nlibrary(plotly)\n\n\nAttaching package: 'plotly'\n\nThe following object is masked from 'package:ggplot2':\n\n    last_plot\n\nThe following object is masked from 'package:stats':\n\n    filter\n\nThe following object is masked from 'package:graphics':\n\n    layout\n\nlibrary(DT)\nlibrary(knitr)\n# Initialize code chunk options\nopts_chunk$set(\n  warning = FALSE,\n  message = FALSE,\n  eval=TRUE,\n  echo = TRUE,\n  cache = FALSE,\n  fig.width = 7, \n  fig.align = 'center',\n  fig.asp = 0.618,\n  out.width = \"700px\")\nsource(\"process_COVID_data.R\")\np1_scatter &lt;- cv_states_today %&gt;% \n  plot_ly(x = ~pop_density, y = ~deathsper100k,\n          type = 'scatter', mode = 'markers', color = ~state,\n          size = ~population, sizes = c(5, 70), marker = list(sizemode='diameter', opacity=0.5),\n          hoverinfo = 'text',\n          text = ~paste( paste(state, \":\", sep=\"\"), paste(\" Cases per 100k: \", per100k, sep=\"\") , paste(\" Deaths per 100k: \",\n                        deathsper100k, sep=\"\"), sep = \"&lt;br&gt;\")) %&gt;%\n  layout(title = \"Population-normalized COVID-19 deaths vs. population density\",\n                  yaxis = list(title = \"Deaths per 100k\"), xaxis = list(title = \"Population Density\"),\n         hovermode = \"compare\")\n\n# filter out \"District of Columbia\"\ncv_states_today_scatter &lt;- cv_states_today %&gt;% filter(state!=\"District of Columbia\")\n\np2_scatter &lt;- cv_states_today_scatter %&gt;% \n  plot_ly(x = ~pop_density, y = ~deathsper100k,\n          type = 'scatter', mode = 'markers', color = ~state,\n          size = ~population, sizes = c(5, 70), marker = list(sizemode='diameter', opacity=0.5),\n          hoverinfo = 'text',\n          text = ~paste( paste(state, \":\", sep=\"\"), paste(\" Cases per 100k: \", per100k, sep=\"\") , paste(\" Deaths per 100k: \",\n                        deathsper100k, sep=\"\"), sep = \"&lt;br&gt;\")) %&gt;%\n  layout(title = \"Population-normalized COVID-19 deaths vs. population density\",\n                  yaxis = list(title = \"Deaths per 100k\"), xaxis = list(title = \"Population Density\"),\n         hovermode = \"compare\")"
+  },
+  {
+    "objectID": "index.html#showcasing-plots",
+    "href": "index.html#showcasing-plots",
+    "title": "PM566 Final Project",
+    "section": "Showcasing plots",
+    "text": "Showcasing plots\n\nTab 1\n\n\n\n\n\n\n\n\nTab 2"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  }
+]
