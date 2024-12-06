@@ -2,8 +2,17 @@
 title: "About"
 ---
 
-About this site
+## Background
 
-```{r}
-1 + 1
-```
+Tobacco use remains one of the most significant public health challenges in the United States, responsible for approximately 480,000 deaths annually, including deaths caused by secondhand smoke exposure. Cigarette smoking, a leading cause of preventable diseases and mortality, contributes to a wide range of health issues, including cancer, heart disease, and respiratory disorders. Despite decades of anti-smoking campaigns and public health interventions, significant disparities in tobacco use persist across different states, age groups, and socioeconomic strata. Alaska and Alabama present unique and contrasting contexts for examining tobacco use trends. Alaska, with its vast rural landscape and high prevalence of indigenous populations, faces unique barriers in tobacco cessation, such as limited access to healthcare and cessation programs. In contrast, Alabama's higher smoking rates are influenced by cultural norms, lower socioeconomic status, and the historical prominence of tobacco farming in the region. Comparing these two states provides valuable insights into how geographic, cultural, and economic factors shape smoking behavior. This study focuses on the period from 2017 to 2019, a timeframe marked by various national and state-level efforts to reduce smoking rates, including increased taxes on tobacco products, the introduction of smoke-free laws, and targeted cessation programs. Analyzing the trends during this period will help evaluate the effectiveness of these interventions and provide evidence for tailoring future public health strategies to regional needs.
+
+## The Dataset Background
+
+The Dataset "Behavioral Risk Factor Data: Tobacco Use (2011 to present)" comes from [Centers for Disease Control and Prevention (CDC)](https://chronicdata.cdc.gov/Survey-Data/Behavioral-Risk-Factor-Data-Tobacco-Use-2011-to-pr/wsas-xwh5/about_data).State Tobacco Activities Tracking and Evaluation (STATE) System. BRFSS Survey Data. The BRFSS is a continuous, state-based surveillance system that collects information about modifiable risk factors for chronic diseases and other leading causes of death. The data for the STATE System were extracted from the annual BRFSS surveys from participating states. Tobacco topics included are cigarette and e-cigarette use prevalence by demographics, cigarette and e-cigarette use frequency, and quit attempts.
+
+## The Research of question
+
+1.  How have the trends of cigarette use varied between Alabama and Alaska over time?
+2.  How does tobacco use differ by education level in Alabama and Alaska?
+3.  How does tobacco use vary between males and females in Alabama and Alaska？
+4.  What are the mean levels of tobacco use across different age groups and types of tobacco in Alabama and Alaska?
