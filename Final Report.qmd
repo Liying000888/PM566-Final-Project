@@ -243,7 +243,7 @@ This research provides data to support the development of more effective public 
 
 # Reference
 
-Tobacco-Related Mortality. (n.d.). CDC Disease Control. https://archive.cdc.gov/www_cdc_gov/tobacco/data_statistics/fact_sheets/health_effects/tobacco_related_mortality/index.htm
+Tobacco-Related Mortality. (n.d.). CDC Disease Control. Tobacco-Related mortality. (2022, August 22). Centers for Disease Control and Prevention.https://www.cdc.gov/
 
 Behavioral Risk Factor Data: Tobacco Use (2011 to present) | Data | Centers for Disease Control and Prevention. (2021, August 16). https://chronicdata.cdc.gov/Survey-Data/Behavioral-Risk-Factor-Data-Tobacco-Use-2011-to-pr/wsas-xwh5/about_data
 

@@ -21,6 +21,8 @@ This project not only examines the unique tobacco use behaviors in these two sta
 
 # Download the Written Report {.tabset}
 
+[The Written Report - PM566 FINAL](https://github.com/Liying000888/PM566-Final-Project/raw/main/docs/Final-Report.pdf)
+
 # Interactive visualizations {.tabset}
 
 ```{r,echo=FALSE,message=FALSE}
