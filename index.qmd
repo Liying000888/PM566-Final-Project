@@ -29,6 +29,7 @@ library(data.table)
 library(tidyverse)
 library(ggplot2)
 library(knitr)
+library(kableExtra)
 library(patchwork)
 Tob.Use<- data.table::fread("/Users/kristydeng/Downloads/wsas-xwh5.csv")
 Tob.Use <- Tob.Use %>%
@@ -65,7 +66,7 @@ ggplot(filtered_data, aes(x = as.factor(year), y = data_value, fill = state)) +
 
 ### The Tobacco Use by Education Level in Alabama and Alaska
 
-The tobacco use rate differs significantly depending on the education level. Generally, individuals with education levels below the 12th grade show higher average tobacco usage compared to those with higher education levels.In Alaska, individuals with below 12th-grade education have an average tobacco usage of 27.11%, whereas in Alabama, it is 19.66%. The higher usage in Alaska suggests that lower educational attainment is more strongly associated with tobacco use in Alaska than in Alabama.The boxplot shows that tobacco use rates for individuals with below 12th-grade education have greater variability in Alaska compared to Alabama, indicating wider disparities in usage.The mean tobacco usage among individuals with exactly 12th-grade education is similar in both states, with Alaska having a mean of 15.84% and Alabama having a mean of 14.72%. The boxplot shows comparable ranges for both states, suggesting that individuals who completed high school in both states exhibit similar tobacco use behavior.Individuals with education levels greater than 12th grade have the lowest average tobacco use in both states, with Alaska at 6.94% and Alabama at 8.81%. The relatively low values and minimal variation suggest that higher education correlates with reduced tobacco use across both states. Overall, The boxplot highlight that education level plays a significant role in tobacco consumption. Lower education levels are associated with higher tobacco usage rates, while those with higher education levels (greater than 12th grade) exhibit the lowest tobacco use.Alaska tends to have a slightly higher average usage compared to Alabama across different education levels, particularly among those with lower educational attainment. Public Health Implications: These findings suggest that education level is a key factor in tobacco use behavior. Public health efforts in Alaska and Alabama should focus on providing targeted tobacco cessation programs for individuals with lower education levels, especially those who did not complete high school. Additionally, the data supports the need for educational campaigns to emphasize the health risks of tobacco use, particularly targeting populations with lower education levels.
+The analysis of tobacco use by education level further underscores the critical role of education in shaping smoking behaviors. Individuals with less than a high school education exhibited the highest tobacco usage rates in both states, while those with more than a high school education reported significantly lower rates. Notably, the variability in usage was greater among less-educated groups, highlighting the compounded influence of socioeconomic disparities.Public health efforts in Alaska and Alabama should focus on providing targeted tobacco cessation programs for individuals with lower education levels, especially those who did not complete high school. Additionally, the data supports the need for educational campaigns to emphasize the health risks of tobacco use, particularly targeting populations with lower education levels.
 
 ```{r,echo=FALSE}
 edu_summary <- Tob.Use_Filter %>%
@@ -76,7 +77,6 @@ edu_summary <- Tob.Use_Filter %>%
   summarise(
     mean_usage = mean(data_value, na.rm = TRUE),
     sd_usage = sd(data_value, na.rm = TRUE),
-    count = n(),
     .groups = "drop"
   )
 ggplot(Tob.Use_Filter %>% filter(year >= 2017, year <= 2019, 
@@ -100,14 +100,18 @@ In both Alabama and Alaska, the percentages of male and female tobacco users are
 
 ```{r,echo=FALSE}
 summary_by_gender <- Tob.Use_Filter %>%
-  filter(gender != "Overall") %>%
+  filter(gender != "Overall", 
+         topicdesc != "Cessation (Adults)", 
+         year %in% c(2018, 2019)) %>%
   group_by(state, gender, topicdesc) %>%
   summarise(
     mean_usage = mean(data_value, na.rm = TRUE),
     sd_usage = sd(data_value, na.rm = TRUE),
-    count = n(),
     .groups = "drop"
   )
+kable(summary_by_gender, 
+      caption = "Tobacco Use by Gender in Alabama and Alaska (2018-2019)", 
+      align = "c")
 filtered_data_gender <- Tob.Use_Filter %>%
   filter(state %in% c("AL", "AK"), year >= 2018, year <= 2019) %>%
   filter(topicdesc %in% c("Smokeless Tobacco Use (Adults)", 
